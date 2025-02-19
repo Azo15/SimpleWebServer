@@ -29,7 +29,7 @@ public class SimpleWebServer {
             var3.println();
             var3.println("<html><body>");
             var3.println("<h1>azo ismail</h1>");
-            var3.println("<h2>5230505081</h2>");
+            var3.println("<h2>xxxxxxxxxxxx</h2>");
             var3.println("<p>Merhaba, ben AZO \u0130SMA\u0130L. K\u0131rklareli \u00dcniversitesi'nde Yaz\u0131l\u0131m M\u00fchendisli\u011fi 2. s\u0131n\u0131f \u00f6\u011frencisiyim. Yaz\u0131l\u0131m geli\u015ftirme ile ilgileniyor ve kariyerimde bu alanda ilerlemek istiyorum.</p>");
             var3.println("</body></html>");
             var3.close();
