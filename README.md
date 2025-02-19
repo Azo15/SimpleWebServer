@@ -1,53 +1,41 @@
-# Ek Ders Ücreti Hesaplayıcı
+# Simple Web Server
 
-Bu proje, akademik personelin ek ders ücretlerini hesaplamasını sağlayan basit bir PHP tabanlı web uygulamasıdır. Kullanıcıdan alınan ders saati ve unvan bilgilerine göre ek ders ücreti hesaplanır ve ekranda gösterilir.
+Bu proje, **Java** kullanılarak geliştirilen basit bir HTTP web sunucusudur. Sunucu, **1989** numaralı portu dinleyerek gelen HTTP isteklerine HTML içeriği ile yanıt verir.
 
-## Özellikler
-- Kullanıcıdan unvan, teorik ve uygulama ders saatlerini alır.
-- Hesaplamada kullanılan aylık katsayı sabit olarak belirlenmiştir.
-- Unvana bağlı olarak farklı katsayılar uygulanır.
-- Maksimum ders saatleri teorik için 20, uygulama için 10 saat olarak sınırlandırılmıştır.
-- Hesaplanan ek ders ücreti kullanıcıya gösterilir.
+## 🚀 Çalıştırma Adımları
 
-## Kullanılan Teknolojiler
-- **HTML** - Sayfanın temel yapısını oluşturur.
-- **CSS** - Sayfanın stilini belirler.
-- **PHP** - Form verilerini işler ve ek ders ücretini hesaplar.
-
-## Kurulum
-1. Bu projeyi yerel makinenize veya bir sunucuya kopyalayın.
-2. PHP'nin çalıştığından emin olun.
-3. `index.php` dosyasını bir tarayıcıda açarak kullanmaya başlayabilirsiniz.
-
-## Kullanım
-1. Kullanıcı formu doldurur:
-   - Ünvan seçilir.
-   - Teorik ve uygulama ders saatleri girilir.
-2. **Hesapla** butonuna basılır.
-3. PHP tarafından hesaplanan ek ders ücreti ekranda gösterilir.
-
-## Hesaplama Yöntemi
-Ek ders ücreti aşağıdaki formüle göre hesaplanmaktadır:
-
-```
-Ek Ders Ücreti = (Teorik Ders Saati + Uygulama Ders Saati) × Ünvan Katsayısı × Aylık Katsayı
+### 1. **Projeyi Derleme**
+Aşağıdaki komut ile Java dosyasını derleyin:
+```sh
+javac SimpleWebServer.java
 ```
 
-- **Aylık Katsayı**: 0.05592
-- **Ünvan Katsayıları**:
-  - Prof. Dr.: 300
-  - Doç. Dr.: 250
-  - Dr. Öğr. Üyesi: 200
-  - Öğretim Görevlisi: 150
-  - Araştırma Görevlisi: 100
-
-## Örnek Kullanım
-Eğer bir "Doç. Dr." 15 saat teorik ve 5 saat uygulama dersi verdiyse hesaplama şu şekilde olur:
-
+### 2. **Sunucuyu Başlatma**
+Derleme tamamlandıktan sonra aşağıdaki komutu kullanarak sunucuyu başlatın:
+```sh
+java SimpleWebServer
 ```
-(15 + 5) × 250 × 0.05592 = 279.60 TL
-```
+Bu komut, sunucunun **1989** portunu dinlemesini sağlar.
 
-## Lisans
-Bu proje açık kaynaklıdır ve kişisel veya eğitim amaçlı kullanım için serbesttir.
+### 3. **Web Tarayıcısından Erişim**
+Sunucu çalıştıktan sonra tarayıcınızı açarak aşağıdaki adresi ziyaret edin:
+```
+http://localhost:1989
+```
+Sayfada aşağıdaki bilgiler görüntülenecektir:
+- **Ad:** Azo İsmail
+- **Öğrenci Numarası:** 5230505081
+- **Hakkımda:** Kırklareli Üniversitesi'nde Yazılım Mühendisliği 2. sınıf öğrencisi.
+
+## 📌 Özellikler
+- **Basit HTTP Sunucusu:** Gelen istekleri kabul eder ve HTML yanıt döndürür.
+- **Statik HTML Sayfası:** Tarayıcıdan açılabilir bir sayfa içerir.
+- **TCP Bağlantısı Kullanımı:** `ServerSocket` ile bağlantı kurar.
+
+## 🛠 Gereksinimler
+- **Java 8+** yüklü olmalıdır.
+- **Komut satırı (CMD, Terminal, PowerShell)** üzerinden çalıştırılabilir.
+
+## 📄 Lisans
+Bu proje **MIT** lisansı altındadır.
 
