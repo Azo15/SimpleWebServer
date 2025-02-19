@@ -24,7 +24,7 @@ http://localhost:1989
 ```
 Sayfada aşağıdaki bilgiler görüntülenecektir:
 - **Ad:** Azo İsmail
-- **Öğrenci Numarası:** 5230505081
+- **Öğrenci Numarası:** xxxxxxxxxxxx
 - **Hakkımda:** Kırklareli Üniversitesi'nde Yazılım Mühendisliği 2. sınıf öğrencisi.
 
 ## 📌 Özellikler
@@ -32,10 +32,4 @@ Sayfada aşağıdaki bilgiler görüntülenecektir:
 - **Statik HTML Sayfası:** Tarayıcıdan açılabilir bir sayfa içerir.
 - **TCP Bağlantısı Kullanımı:** `ServerSocket` ile bağlantı kurar.
 
-## 🛠 Gereksinimler
-- **Java 8+** yüklü olmalıdır.
-- **Komut satırı (CMD, Terminal, PowerShell)** üzerinden çalıştırılabilir.
-
-## 📄 Lisans
-Bu proje **MIT** lisansı altındadır.
 
