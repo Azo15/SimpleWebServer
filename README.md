@@ -1,43 +1,50 @@
-// Source code is decompiled from a .class file using FernFlower decompiler.
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.ServerSocket;
-import java.net.Socket;
+Proje Adı: SimpleWebServer
+Dil: Java
+Port: 1989
 
-public class SimpleWebServer {
-    public SimpleWebServer() {
-    }
+🚀 Proje Açıklaması
 
-    public static void main(String[] var0) {
-        try {
-            ServerSocket var1 = new ServerSocket(1989);
-            System.out.println("Sunucu Calisiyor, 1989 portunu dinliyor...");
+Bu proje, Java kullanılarak geliştirilmiş basit bir web sunucusudur. Tarayıcı üzerinden localhost:1989 adresine bağlanıldığında, kullanıcıya HTML formatında kişisel bir bilgi sayfası gösterilir.
 
-            while(true) {
-                Socket var2 = var1.accept();
-                PrintWriter var3 = new PrintWriter(var2.getOutputStream(), true);
-                BufferedReader var4 = new BufferedReader(new InputStreamReader(var2.getInputStream()));
+⚙️ Çalışma Mantığı
 
-                String var5;
-                while((var5 = var4.readLine()) != null && !var5.isEmpty()) {
-                }
+ServerSocket nesnesi 1989 portunda dinlemeye başlar.
 
-                var3.println("HTTP/1.1 200 OK");
-                var3.println("Content-Type: text/html");
-                var3.println();
-                var3.println("<html><body>");
-                var3.println("<h1>Azo ISMAIL</h1>");
-                var3.println("<h2>5230505081</h2>");
-                var3.println("<p>Merhaba, ben AZO ISMAIL. Kirklareli Universitesi'nde Yazilim Muhendisligi 3. sinif Ogrencisiyim. Yazilim gelistirme ile ilgileniyor ve kariyerimde bu alanda ilerlemek istiyorum.</p>");
-                 var3.println("</body></html>");
-                var3.close();
-                var4.close();
-                var2.close();
-            }
-        } catch (IOException var6) {
-            var6.printStackTrace();
-        }
-    }
-}
+Tarayıcıdan gelen bağlantı isteği kabul edilir.
+
+İstek satırları BufferedReader ile okunur.
+
+Sunucu, PrintWriter aracılığıyla istemciye bir HTTP cevabı (200 OK) gönderir.
+
+HTML içeriğinde öğrenci bilgileri ve kısa tanıtım metni bulunur.
+
+🧠 Kullanılan Nesneler
+
+ServerSocket: Sunucu bağlantılarını dinler.
+
+Socket: İstemci ile veri alışverişini sağlar.
+
+PrintWriter: Sunucudan istemciye veri (HTTP cevabı) gönderir.
+
+BufferedReader: İstemciden gelen isteği okur.
+
+🌐 Çalıştırma
+
+Kodu derleyin:
+
+javac SimpleWebServer.java
+
+
+Sunucuyu başlatın:
+
+java SimpleWebServer
+
+
+Tarayıcıya şu adresi yazın:
+
+http://localhost:1989
+
+👤 Yazar
+
+Azo İsmail – 5230505081
+Kırklareli Üniversitesi, Yazılım Mühendisliği
