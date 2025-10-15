@@ -1,35 +1,43 @@
-# Simple Web Server
+// Source code is decompiled from a .class file using FernFlower decompiler.
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
 
-Bu proje, **Java** kullanılarak geliştirilen basit bir HTTP web sunucusudur. Sunucu, **1989** numaralı portu dinleyerek gelen HTTP isteklerine HTML içeriği ile yanıt verir.
+public class SimpleWebServer {
+    public SimpleWebServer() {
+    }
 
-## 🚀 Çalıştırma Adımları
+    public static void main(String[] var0) {
+        try {
+            ServerSocket var1 = new ServerSocket(1989);
+            System.out.println("Sunucu Calisiyor, 1989 portunu dinliyor...");
 
-### 1. **Projeyi Derleme**
-Aşağıdaki komut ile Java dosyasını derleyin:
-```sh
-javac SimpleWebServer.java
-```
+            while(true) {
+                Socket var2 = var1.accept();
+                PrintWriter var3 = new PrintWriter(var2.getOutputStream(), true);
+                BufferedReader var4 = new BufferedReader(new InputStreamReader(var2.getInputStream()));
 
-### 2. **Sunucuyu Başlatma**
-Derleme tamamlandıktan sonra aşağıdaki komutu kullanarak sunucuyu başlatın:
-```sh
-java SimpleWebServer
-```
-Bu komut, sunucunun **1989** portunu dinlemesini sağlar.
+                String var5;
+                while((var5 = var4.readLine()) != null && !var5.isEmpty()) {
+                }
 
-### 3. **Web Tarayıcısından Erişim**
-Sunucu çalıştıktan sonra tarayıcınızı açarak aşağıdaki adresi ziyaret edin:
-```
-http://localhost:1989
-```
-Sayfada aşağıdaki bilgiler görüntülenecektir:
-- **Ad:** Azo İsmail
-- **Öğrenci Numarası:** xxxxxxxxxxxx
-- **Hakkımda:** Kırklareli Üniversitesi'nde Yazılım Mühendisliği 2. sınıf öğrencisi.
-
-## 📌 Özellikler
-- **Basit HTTP Sunucusu:** Gelen istekleri kabul eder ve HTML yanıt döndürür.
-- **Statik HTML Sayfası:** Tarayıcıdan açılabilir bir sayfa içerir.
-- **TCP Bağlantısı Kullanımı:** `ServerSocket` ile bağlantı kurar.
-
-
+                var3.println("HTTP/1.1 200 OK");
+                var3.println("Content-Type: text/html");
+                var3.println();
+                var3.println("<html><body>");
+                var3.println("<h1>Azo ISMAIL</h1>");
+                var3.println("<h2>5230505081</h2>");
+                var3.println("<p>Merhaba, ben AZO ISMAIL. Kirklareli Universitesi'nde Yazilim Muhendisligi 3. sinif Ogrencisiyim. Yazilim gelistirme ile ilgileniyor ve kariyerimde bu alanda ilerlemek istiyorum.</p>");
+                 var3.println("</body></html>");
+                var3.close();
+                var4.close();
+                var2.close();
+            }
+        } catch (IOException var6) {
+            var6.printStackTrace();
+        }
+    }
+}
